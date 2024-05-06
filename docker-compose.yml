@@ -1,0 +1,9 @@
+version: '3.5'
+
+services:
+  object_detection:
+    build: .
+    container_name: object_detection
+    ports:
+      - 8000:8000
+    restart: unless-stopped

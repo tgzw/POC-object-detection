@@ -1,0 +1,20 @@
+{
+	"info": {
+		"_postman_id": "7b968ff9-8c49-4369-b61e-e22cafaff3b7",
+		"name": "object recognition",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "object_recognition",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
