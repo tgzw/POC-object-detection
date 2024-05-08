@@ -4,7 +4,9 @@
 
 
 ### Locally
-Download a RetinaNet model (like https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/retinanet_resnet50_fpn_coco-eeacb38b.pth/) and put it in `object_detection/assets/models`
+
+#### In Windows
+Run `download-model-win.ps1`  
 Use python 3.11.0
 ```
 pip install -r requirements

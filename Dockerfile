@@ -3,18 +3,21 @@ FROM python:3.11.0
 COPY . /app
 WORKDIR /app
 
-# Download model
-RUN curl -LJO https://github.com/OlafenwaMoses/ImageAI/releases/download/3.0.0-pretrained/retinanet_resnet50_fpn_coco-eeacb38b.pth/
-RUN cp retinanet_resnet50_fpn_coco-eeacb38b.pth /app/object_detection/assets/models/
-
 # Install system dependencies
-RUN apt-get update -y \
-    && apt-get install -y libgl1 ghostscript python3-tk \
-    && apt-get clean \
-    && apt-get autoremove \
+# RUN apt-get update && apt-get install -y wget
+RUN apt-get update && \
+    apt-get install -y \
+    wget \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
+# Download model
+RUN chmod +x download-model-linux.sh
+RUN ./download-model-linux.sh
+
 # Install python dependencies
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # Run
